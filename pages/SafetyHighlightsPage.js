@@ -115,7 +115,6 @@ class safetyHighlightsPage
         await expect(this.acclaimedImg).toBeVisible();
     }
 
-    //----------
     async validateDBResearchButton(){
         await expect(this.ddResearchButton).toBeEnabled();
     }
@@ -172,37 +171,30 @@ class safetyHighlightsPage
         await expect(this.autonomousDrivingImg).toBeVisible();
     }
 
-        // this.rechargeVehicleModelTitle = this.page.locator('#ProductListCarousel-1');
-        // this.nextSlide = this.page.locator('#ProductListCarousel-1').getByLabel('Next slide');
-        // this.previousSlide = this.page.locator('#ProductListCarousel-1').getByLabel('Previous slide');
-        // this.EC40 = this.page.getByLabel('EC40', { exact: true });
 
-        // this.footerDescription = this.page.locator('#Disclaimer-1');
-        // this.backToTopButton = this.page.getByRole('contentinfo');
+    async validateRechargeVehicleTitle(){
+        await expect(this.rechargeVehicleModelTitle).toContainText(testData.rechargeVehicleTitle);
+    }
 
-        async validateRechargeVehicleTitle(){
-            await expect(this.rechargeVehicleModelTitle).toContainText(testData.rechargeVehicleTitle);
-        }
-    
-        async validateNextslideBtn(){
-            await expect(this.nextSlide).toBeEnabled();
-        }
+    async validateNextslideBtn(){
+        await expect(this.nextSlide).toBeEnabled();
+    }
 
-        // async validateNextslideBtn(){
-        //     await this.page.locator(this.nextSlide).click();
-        // }
-    
-        async validateAutonomousDImage(){
-            await expect(this.autonomousDrivingImg).toBeVisible();
-        }
+    // async validateNextslideBtn(){
+    //     await this.page.locator(this.nextSlide).click();
+    // }
 
-        async validateEC40Button(){
-            await expect(this.EC40).toBeEnabled();
-        }
+    async validateAutonomousDImage(){
+        await expect(this.autonomousDrivingImg).toBeVisible();
+    }
 
-        async validateBackToTopButton(){
-            await expect(this.backToTopButton).toBeEnabled();
-        }
+    async validateEC40Button(){
+        await expect(this.EC40).toBeEnabled();
+    }
+
+    async validateBackToTopButton(){
+        await expect(this.backToTopButton).toBeEnabled();
+    }
 
 
 }

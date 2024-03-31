@@ -1,4 +1,10 @@
 const {test, expect} = require('@playwright/test')
+const fs = require('fs');
+const path = require('path');
+
+
+const jsonFilePath = path.resolve(__dirname, '../conf/config.json');
+const testData = JSON.parse(fs.readFileSync(jsonFilePath));
 
 exports.SafetyCultureAndVisionPage = 
 
