@@ -11,6 +11,7 @@ test('Validate safety research page', async ({ page }) => {
     await safetyResearchPage.clickSafetyResearchTab();
     await safetyResearchPage.validateResearchDescription();
     await safetyResearchPage.validateResearchImg();
+    expect(await page.screenshot()).toMatchSnapshot("safetyResearchPage.png");
     await safetyResearchPage.validateMoreThan40YearTitle();
     
     await safetyResearchPage.validateMoreThan40YearDesc();

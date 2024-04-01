@@ -15,6 +15,7 @@ test('Validate safety heritage page', async ({ page }) => {
     await safetyHeritagePage.validateThreePointSafetyBDesc();
     
     await safetyHeritagePage.validateThreePointSafetyBImg();
+    expect(await page.screenshot()).toMatchSnapshot("safetyHeritagePage.png");
     await safetyHeritagePage.validateRearwardFacingChildSeatTitle();
     await safetyHeritagePage.validateRearwardFacingChildSeatDesc();
     await safetyHeritagePage.validaterRearwardFacingChildSeatImg();
