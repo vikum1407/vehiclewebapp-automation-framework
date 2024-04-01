@@ -11,5 +11,7 @@ COPY util /app/util
 COPY package.json package-lock.json /app/
 RUN npm install
 
+EXPOSE 55653
+
 # Run your Playwright tests
 CMD ["npm", "test"]
