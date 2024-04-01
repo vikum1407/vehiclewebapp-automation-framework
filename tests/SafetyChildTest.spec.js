@@ -10,6 +10,7 @@ test('Validate highlight main image and description', async ({ page }) => {
 
     await volvoCommonUtil.gotoPage();
     await safetyChildPage.clickSafetyChildTab();
+    expect(await page.screenshot()).toMatchSnapshot("safetyHighlightsPage.png");
     await safetyChildPage.validateChildDescription();
     await safetyChildPage.validateChildSafetyImg();
     await safetyChildPage.validateEveryonesIncludeTitle();

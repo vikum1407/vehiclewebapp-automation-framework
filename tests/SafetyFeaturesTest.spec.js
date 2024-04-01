@@ -31,6 +31,7 @@ test('Validate protecting features', async ({ page }) => {
 
     await volvoCommonUtil.gotoPage();
     await safetyFeaturesPage.clickSafetyFeaturesTab();
+    expect(await page.screenshot()).toMatchSnapshot("safetyHighlightsPage.png");
     await safetyFeaturesPage.validateProtectingDayTitle();
     await safetyFeaturesPage.validateCollisionAvoidTitle();
     await safetyFeaturesPage.validateCollisionAvoidDescription();

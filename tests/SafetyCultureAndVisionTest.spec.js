@@ -11,6 +11,7 @@ test('Validate culture and vision', async ({ page }) => {
 
     await volvoCommonUtil.gotoPage();
     await safetyCultureAndVisionPage.clickVisionCultureTab();
+    expect(await page.screenshot()).toMatchSnapshot("safetyHighlightsPage.png");
     await safetyCultureAndVisionPage.validatevisonMainDescription();
     await safetyCultureAndVisionPage.validateVisionImage();
     await safetyCultureAndVisionPage.validateCofounderSaying();
