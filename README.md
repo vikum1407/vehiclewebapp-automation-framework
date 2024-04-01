@@ -68,5 +68,3 @@ kubectl scale deployment playwright-deployment --replicas=5
 ```
 
 ![Logo]()
-
-This is a README file to update to the GitHub. Please correct the grammar here.
