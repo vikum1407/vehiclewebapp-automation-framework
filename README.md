@@ -67,4 +67,4 @@ kubectl apply -f playwright-service.yaml
 kubectl scale deployment playwright-deployment --replicas=5
 ```
 
-![Logo]()
+![Logo](https://github.com/vikum1407/vehiclewebapp-automation-framework/blob/master/playwright-auto-framework.PNG)
