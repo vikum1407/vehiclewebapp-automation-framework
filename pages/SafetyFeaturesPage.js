@@ -13,6 +13,7 @@ class safetyFeaturesPage
     constructor(page)
     {
         this.page = page;
+        this.safetyFeatureTab = this.page.getByRole('link', { name: 'Features' })
         this.featureDescription = this.page.locator('#TextStatement-1');
         this.lidarTitle = this.page.locator('#ImageWithText-1');
         this.lidarDescription = this.page.locator('#ImageWithText-1');
@@ -56,6 +57,10 @@ class safetyFeaturesPage
         this.airBagsTitle = this.page.locator('#MediaHighlights-3');
         this.airBagsDesc = this.page.locator('#MediaHighlights-3');
         this.airBagsImg = this.page.getByRole('img', { name: 'Chassis view of a car with' });
+    }
+
+    async clickSafetyFeaturesTab(){
+        await this.page.getByRole('link', { name: 'Features' }).click();
     }
 
     async validateFeatureDescription(){
