@@ -13,7 +13,8 @@ class safetyCultureAndVisionPage
     constructor(page)
     {
         this.page = page;
-        this.visonMainDescription = this.page.locator('#ModelIntro-2');
+        this.visionAndCulTab = "//a[contains(text(), 'Culture & vision')]";
+        this.visonMainDescription = this.page.locator("//p[contains(text(),'Safety is so much more than sticking a label to a ')]");
         this.visonImg = this.page.getByRole('img', { name: 'Three people having a chat' });
         this.cofounderSaying = this.page.locator('#ImageWithText-1');
         this.cofounderImg = this.page.getByRole('img', { name: 'A vintage shot of two' });
@@ -35,8 +36,12 @@ class safetyCultureAndVisionPage
         this.supportImg = this.page.getByRole('img', { name: 'A digital rendering of a' });
     }
 
+    async clickVisionCultureTab(){
+        await page.getByRole('link', { name: 'Culture & vision' }).click();
+    }
+
     async validatevisonMainDescription(){
-        await expect(this.visonMainDescription).toContainText(testData.descriptionText);
+        await expect(this.visonMainDescription).toContainText(testData.visonMainDescription);
     }
 
     async validateVisionImage(){
