@@ -12,6 +12,7 @@ class safetyChildPage
     constructor(page)
     {
         this.page = page;
+        this.safetyChildTab = this.page.getByRole('link', { name: 'Child safety' });
         this.childSafetyDescription = this.page.locator('#ModelIntro-2');
         this.childSafetyImg = this.page.getByRole('img', { name: 'A child sat leaning on a wall' });
         this.everyonesIncludeTitle = this.page.locator('#ImageWithText-1');
@@ -37,6 +38,10 @@ class safetyChildPage
         infantSeatSize = page3.locator('#ImageWithText-1')
         infantSeatDesc = page3.locator('#ImageWithText-1');
         infantSeatImg = page3.getByRole('img', { name: 'Volvo infant child seat for' });
+    }
+
+    async clickSafetyChildTab(){
+        await this.page.getByRole('link', { name: 'Child safety' }).click();
     }
 
     async validateChildDescription(){
