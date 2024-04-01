@@ -13,7 +13,7 @@ The project uses the Page Object Model (POM) design pattern to develop a Playwri
 
 ## Main Features:
 
-1. Playwright UI automation framework
+1. Playwright UI automation framework including visual comparisons
 2. Dockerfile to create an image
 3. Playwright Allure reports
 4. Kubernetes distributed environment setup
