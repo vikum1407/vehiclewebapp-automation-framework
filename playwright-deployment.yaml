@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playwright-deployment
+spec:
+  replicas: 3  
+  selector:
+    matchLabels:
+      app: playwright
+  template:
+    metadata:
+      labels:
+        app: playwright
+    spec:
+      containers:
+      - name: playwright-container
+        image: vikum1407/playwright-auto-framework:thirdimg  
+        ports:
+        - containerPort: 55653  # Expose Allure report port
