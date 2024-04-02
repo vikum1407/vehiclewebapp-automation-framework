@@ -2,14 +2,16 @@ import { test, expect } from '@playwright/test';
 import { VolvoCommonUtilMethods } from '../util/VolvoCommonUtilMetods';
 import { SafetyHighlightsPage } from '../pages/SafetyHighlightsPage';
 
-    
+
+test.beforeEach(async () => {
+    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
+    await volvoCommonUtil.gotoPage();
+});
 
 test('Validate highlight main image and description', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyHighlightsPage = new SafetyHighlightsPage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyHighlightsPage.validateFirstDescription();
     await safetyHighlightsPage.validateMainImage();
     expect(await page.screenshot()).toMatchSnapshot("safetyHighlightsPage.png");
@@ -18,10 +20,8 @@ test('Validate highlight main image and description', async ({ page }) => {
 
 test('Validate safety for drive', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyHighlightsPage = new SafetyHighlightsPage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyHighlightsPage.validateSafeSpace();
     await safetyHighlightsPage.validateSafeSpaceTitle();
     await safetyHighlightsPage.validateFirstDescription();
@@ -45,10 +45,8 @@ test('Validate safety for drive', async ({ page }) => {
 
 test('Validate our learnings', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyHighlightsPage = new SafetyHighlightsPage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyHighlightsPage.validateEvolutionTitle();
     await safetyHighlightsPage.validateEvolutionDesc();
     await safetyHighlightsPage.validateEvolutionImage();
@@ -62,6 +60,5 @@ test('Validate our learnings', async ({ page }) => {
     await safetyHighlightsPage.validateAutonomousDImage();
     await safetyHighlightsPage.validateEC40Button();
     await safetyHighlightsPage.validateBackToTopButton();
-    
     
 });

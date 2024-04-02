@@ -2,12 +2,15 @@ import {test, expect} from '@playwright/test';
 import { VolvoCommonUtilMethods } from '../util/VolvoCommonUtilMetods';
 import { SafetyResearchPage } from '../pages/SafetyResearchPage';
 
+test.beforeEach(async () => {
+    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
+    await volvoCommonUtil.gotoPage();
+});
+
 test('Validate safety research page', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyResearchPage = new SafetyResearchPage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyResearchPage.clickSafetyResearchTab();
     await safetyResearchPage.validateResearchDescription();
     await safetyResearchPage.validateResearchImg();

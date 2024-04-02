@@ -2,13 +2,15 @@ import { test, expect } from '@playwright/test';
 import { VolvoCommonUtilMethods } from '../util/VolvoCommonUtilMetods';
 import { SafetyChildPage } from '../pages/SafetyChildPage';
 
+test.beforeEach(async () => {
+    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
+    await volvoCommonUtil.gotoPage();
+});
 
 test('Validate highlight main image and description', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyChildPage = new SafetyChildPage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyChildPage.clickSafetyChildTab();
     expect(await page.screenshot()).toMatchSnapshot("safetyHighlightsPage.png");
     await safetyChildPage.validateChildDescription();

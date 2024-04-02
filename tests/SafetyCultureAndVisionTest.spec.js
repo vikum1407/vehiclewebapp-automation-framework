@@ -3,13 +3,15 @@ import { VolvoCommonUtilMethods } from '../util/VolvoCommonUtilMetods';
 import { SafetyCultureAndVisionPage } from '../pages/SafetyCultureAndVisionPage';
 
 
+test.beforeEach(async () => {
+    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
+    await volvoCommonUtil.gotoPage();
+});
 
 test('Validate culture and vision', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyCultureAndVisionPage = new SafetyCultureAndVisionPage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyCultureAndVisionPage.clickVisionCultureTab();
     expect(await page.screenshot()).toMatchSnapshot("safetyHighlightsPage.png");
     await safetyCultureAndVisionPage.validatevisonMainDescription();
@@ -21,10 +23,8 @@ test('Validate culture and vision', async ({ page }) => {
 
 test('Validate future of safety leadership', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyCultureAndVisionPage = new SafetyCultureAndVisionPage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyCultureAndVisionPage.clickVisionCultureTab();
     await safetyCultureAndVisionPage.validateSafetyDNADescription();
     await safetyCultureAndVisionPage.validateFutureSafetyTitle();

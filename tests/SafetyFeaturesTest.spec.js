@@ -3,12 +3,15 @@ import { VolvoCommonUtilMethods } from '../util/VolvoCommonUtilMetods';
 import { SafetyFeaturesPage } from '../pages/SafetyFeaturesPage';
 
 
+test.beforeEach(async () => {
+    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
+    await volvoCommonUtil.gotoPage();
+});
+
 test('Validate Volvo vehicle main features', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyFeaturesPage = new SafetyFeaturesPage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyFeaturesPage.clickSafetyFeaturesTab();
     await safetyFeaturesPage.validateFeatureDescription();
     await safetyFeaturesPage.validateLindarImage();
@@ -26,10 +29,8 @@ test('Validate Volvo vehicle main features', async ({ page }) => {
 
 test('Validate protecting features', async ({ page }) => {
 
-    const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     const safetyFeaturesPage = new SafetyFeaturePage(page);     
 
-    await volvoCommonUtil.gotoPage();
     await safetyFeaturesPage.clickSafetyFeaturesTab();
     expect(await page.screenshot()).toMatchSnapshot("safetyHighlightsPage.png");
     await safetyFeaturesPage.validateProtectingDayTitle();
