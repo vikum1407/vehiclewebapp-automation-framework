@@ -73,5 +73,5 @@ kubectl scale deployment playwright-deployment --replicas=5
 
 
 
-The README file has been updated with improved grammar and additional information.
+
 ![Logo](https://github.com/vikum1407/vehiclewebapp-automation-framework/blob/master/playwright-auto-framework.PNG)
