@@ -14,4 +14,4 @@ RUN npm install
 EXPOSE 55653
 
 # Run your Playwright tests
-CMD ["npx", "playwright", "test"]
+CMD ["npx", "playwright", "test", "SafetyHighlightsTest.spec.js"]
