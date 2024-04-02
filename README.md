@@ -1,6 +1,6 @@
 # Playwright Automation Framework Setup on Kubernetes Distributed Environment with Docker
 
-This project repository contains code to demonstrate JavaScript Playwright 🎭, Docker 🐋, and Kubernetes.
+This project repository contains code to demonstrate JavaScript Playwright 🎭, Allure reports, Docker 🐋, and Kubernetes.
 
 The project uses the Page Object Model (POM) design pattern to develop a Playwright web application automation framework and expands the framework with Docker and Kubernetes to test in a distributed environment approach.
 
