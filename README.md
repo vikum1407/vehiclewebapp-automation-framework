@@ -67,4 +67,11 @@ kubectl apply -f playwright-service.yaml
 kubectl scale deployment playwright-deployment --replicas=5
 ```
 
+## Performance Testing on the Web Application
+
+  * If you want to do performance testing on the web application, here is the solution to integrate an automated JMeter distributed framework into your CI/CD pipeline: [Automated JMeter Distributed Framework](https://github.com/vikum1407/jmeter-kubernetes-distributed)
+
+
+
+The README file has been updated with improved grammar and additional information.
 ![Logo](https://github.com/vikum1407/vehiclewebapp-automation-framework/blob/master/playwright-auto-framework.PNG)
