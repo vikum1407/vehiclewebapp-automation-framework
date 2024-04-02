@@ -3,7 +3,7 @@ import { VolvoCommonUtilMethods } from '../util/VolvoCommonUtilMetods';
 import { SafetyFeaturesPage } from '../pages/SafetyFeaturesPage';
 
 
-test.beforeEach(async () => {
+test.beforeEach(async ({ page }) => {
     const volvoCommonUtil = new VolvoCommonUtilMethods(page);
     await volvoCommonUtil.gotoPage();
 });

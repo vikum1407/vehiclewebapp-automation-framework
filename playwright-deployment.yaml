@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: playwright-container
-        image: vikum1407/playwright-auto-framework:thirdimg  
+        image: vikum1407/playwright-auto-framework:sixthimg  
         ports:
         - containerPort: 55653  # Expose Allure report port
