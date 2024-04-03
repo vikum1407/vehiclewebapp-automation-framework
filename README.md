@@ -43,10 +43,16 @@ npx allure open ./allure-report/
 npx playwright test
 ```
 
+## Run All Tests with Parallelism
+
+```bash
+npx playwright test --workers 4
+```
+
 ## Run the Tests on Docker
 
 ```bash
-docker build -t <image_name:tag>
+docker run --rm playwright-auto-framework npx playwright test
 ```
 
 ## Run All Tests without Parallelism
